@@ -7,7 +7,7 @@ const generateTeam = team => {
         <div class="card border-dark mb-3" style="max-width: 18rem;">
             <div class="card-header">
                 <h3>${manager.getName()}</h3>
-                <h4>${manager.getRole()}</h4><i class="fa-duotone fa-mug-hot"></i>
+                <h4>${manager.getRole()}</h4>
             </div>
             <div class="card-body text-dark">
             <p class="id">ID: ${manager.getID()}</p>
@@ -26,7 +26,7 @@ const generateTeam = team => {
             <div class="card border-dark mb-3" style="max-width: 18rem;">
                 <div class="card-header">
                     <h3>${engineer.getName()}</h3>
-                    <h4>${engineer.getRole()}</h4><i class="fa-solid fa-glasses-round"></i>
+                    <h4>${engineer.getRole()}</h4>
                 </div>
                 <div class="card-body text-dark">
                 <p class="id">ID: ${engineer.getID()}</p>
@@ -45,7 +45,7 @@ const generateTeam = team => {
         <div class="card border-dark mb-3" style="max-width: 18rem;">
             <div class="card-header">
                 <h3>${intern.getName()}</h3>
-                <h4>${intern.getRole()}</h4><i class="fa-solid fa-user-graduate"></i>
+                <h4>${intern.getRole()}</h4>
             </div>
             <div class="card-body text-dark">
             <p class="id">ID: ${intern.getID()}</p>
@@ -89,13 +89,12 @@ module.exports = team => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style.css">
         <title>Team Profile Generator</title>
     </head>
     <body>
         <header>
-            <nav id="navbar">
+            <nav id="navbar navbar-light bg-light">
                 <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Team</span>
             </nav>
         </header>
