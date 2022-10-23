@@ -1,5 +1,5 @@
-const Manager = require('./lib/Manager.test.js');
-const Engineer = require('./lib/Engineer.test.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
 
 teamArray = [];
 
