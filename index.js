@@ -1,5 +1,8 @@
-const Manager = require('./lib/Manager.js');
-const Engineer = require('./lib/Engineer.js');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
+
 
 teamArray = [];
 
@@ -57,5 +60,30 @@ function addEngineer() {
         teamArray.push(Engineer);
         createTeam();
     });
+}
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "interName",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the intern's email address?"
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school does the intern attend?"
+        }
+    ])
+    .then(answers => {
+        const intern = new Intern(answers.interName, answers.internId, answers.internEmail, answers.internSchool);
+        teamArray.push(intern);
+        createTeam();
+    })
 }
 
