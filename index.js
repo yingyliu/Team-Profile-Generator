@@ -1,10 +1,13 @@
+const generateHTML = require('./src/generateHTML');
+
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const fs = require('fs');
+const inquirer = require('inquirer');
 
-
-teamArray = [];
+const teamArray = [];
 
 function addManager() {
     inquirer.prompt ([
@@ -87,3 +90,13 @@ function addIntern() {
     })
 }
 
+const writeFile = data => {
+    fs.writeFile('/dist/index.html', data, err => {
+        if(err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Team created!")
+        }
+    })
+}
