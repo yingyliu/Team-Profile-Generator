@@ -1,0 +1,18 @@
+const { default: test } = require('node:test');
+const Engineer = require('../lib/Engineer');
+
+
+test('creates an Engineer object', () => {
+    const engineer = new Engineer('Ying', 79, 'ying@fakemail.com');
+    expect(engineer.github).toEqual(expect.any(String));
+});
+
+test("create a github", () => {
+    const engineer = new Engineer('Ying', 79, 'ying@fakemail.com');
+    expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));
+});
+
+test("Testing role", () => {
+    const engineer = new Engineer('Ying', 79, 'ying@fakemail.com');
+    expect(engineer.getRole()).toEqual("Engineer");
+});
