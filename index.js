@@ -100,3 +100,16 @@ const writeFile = data => {
         }
     })
 }
+
+addManager()
+    .then(addEngineer)
+    .then(addIntern)
+    .then(teamArray => {
+        return generateHTML(teamArray);
+    })
+    .then(indexHTML => {
+        return writeFile(indexHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });
