@@ -59,7 +59,7 @@ function addEngineer() {
         }
     ])
     .then(answers => {
-        const Engineer = new Engineer(answers.engineerName, answer.engineerId, answers.engineerEmail, answers.engineerGithub);
+        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
         teamArray.push(Engineer);
         createTeam();
     });
