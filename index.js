@@ -9,6 +9,7 @@ const Intern = require('./lib/Intern');
 
 const teamArray = [];
 
+
 function addManager() {
     inquirer.prompt ([
         {
@@ -101,13 +102,27 @@ const writeFile = data => {
     })
 }
 
-function init(){
-    inquirer
-        .prompt(questions)
-        .then(function (response) {
-            const htmlPageContent = generateHTML(response);
-        })
-}
+addManager()
 
-init()
+    if(userAddsIntern) {
+        addIntern()
+    } else if (userAddsEngineer) {
+        addEngineer()
+    } else {
+        printHTML()
+    }
+
+
+// function init(){
+//     inquirer
+//         .prompt(addManager)
+//         .then(function (response) {
+//             const htmlPageContent = generateHTML(response);
+//         })
+// }
+
+// init()
+
+
+
 
