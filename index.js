@@ -1,11 +1,11 @@
+const inquirer = require('inquirer');
+const fs = require('fs');
+
 const generateHTML = require('./src/generateHTML');
 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-
-const fs = require('fs');
-const inquirer = require('inquirer');
 
 const teamArray = [];
 
@@ -101,15 +101,13 @@ const writeFile = data => {
     })
 }
 
-addManager()
-    .then(addEngineer)
-    .then(addIntern)
-    .then(teamArray => {
-        return generateHTML(teamArray);
-    })
-    .then(indexHTML => {
-        return writeFile(indexHTML);
-    })
-    .catch(err => {
-        console.log(err);
-    });
+function init(){
+    inquirer
+        .prompt(questions)
+        .then(function (response) {
+            const htmlPageContent = generateHTML(response);
+        })
+}
+
+init()
+
