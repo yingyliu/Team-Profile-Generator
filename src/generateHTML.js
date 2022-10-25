@@ -29,7 +29,7 @@ const generateTeam = team => {
                     <h4>${engineer.getRole()}</h4>
                 </div>
                 <div class="card-body text-dark">
-                <p class="id">ID: ${engineer.getID()}</p>
+                <p class="id">ID: ${engineer.getId()}</p>
                 <p class="email">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
                 <p class="github">GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
                 </div>
@@ -48,7 +48,7 @@ const generateTeam = team => {
                 <h4>${intern.getRole()}</h4>
             </div>
             <div class="card-body text-dark">
-            <p class="id">ID: ${intern.getID()}</p>
+            <p class="id">ID: ${intern.getId()}</p>
             <p class="email">Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
             <p class="school">School: ${intern.getSchool()}</p>
             </div>

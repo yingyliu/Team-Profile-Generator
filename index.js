@@ -6,8 +6,40 @@ const generateHTML = require('./src/generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const { exit } = require('process');
 
 const teamArray = [];
+
+function createTeam() {
+    inquirer.prompt ([
+        {
+            type: "list",
+            name: "employeeList",
+            message: "Please select the next employee you would like to add, otherwise feel free to exit.",
+            choices: ["Manager", "Engineer", "Intern", "Exit", "Build a team"],
+        }
+    ])
+    .then(answers => {
+        const {employeeList} = answers;
+
+        switch (employeeList) {
+            case 'Manager':
+                addManager()
+                break;
+            case 'Engineer':
+                addEngineer()
+                break;
+            case 'Intern':
+                addIntern()
+                break;
+            case 'Exit':
+                exit()
+                break;
+            default:
+                writeFile()
+        }
+    })
+}
 
 
 function addManager() {
@@ -34,8 +66,8 @@ function addManager() {
         }
     ])
     .then(answers => {
-        const Manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-        teamArray.push(Manager);
+        const hireManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+        teamArray.push(hireManager);
         createTeam();
     });
 }
@@ -60,8 +92,8 @@ function addEngineer() {
         }
     ])
     .then(answers => {
-        const Engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-        teamArray.push(Engineer);
+        const hireEngineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        teamArray.push(hireEngineer);
         createTeam();
     });
 }
@@ -85,14 +117,14 @@ function addIntern() {
         }
     ])
     .then(answers => {
-        const intern = new Intern(answers.interName, answers.internId, answers.internEmail, answers.internSchool);
-        teamArray.push(intern);
+        const hireIntern = new Intern(answers.interName, answers.internId, answers.internEmail, answers.internSchool);
+        teamArray.push(hireIntern);
         createTeam();
     })
 }
 
-const writeFile = data => {
-    fs.writeFile('/dist/index.html', data, err => {
+const writeFile = () => {
+    fs.writeFile('./dist/index.html', generateHTML(teamArray), err => {
         if(err) {
             console.log(err);
             return;
@@ -103,14 +135,16 @@ const writeFile = data => {
 }
 
 addManager()
-
-    if(userAddsIntern) {
-        addIntern()
-    } else if (userAddsEngineer) {
-        addEngineer()
-    } else {
-        printHTML()
-    }
+    // .then(addEngineer)
+    // .then((teamArray) => {
+    //     return generateHTML(teamArray);
+    // })
+    // .then((htmlPageContent) => {
+    //     return writeFile(htmlPageContent);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // });
 
 
 // function init(){
