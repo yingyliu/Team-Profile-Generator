@@ -1,5 +1,7 @@
+// create team card
 const generateTeam = team => {
-
+    
+    // create manager role card
     const generateManager = manager => {
         return `
         <!-- Team Member-Manager-->
@@ -19,6 +21,7 @@ const generateTeam = team => {
         `;
     };
 
+    // create engineer role card
     const generateEngineer = engineer => {
         return `
         <!-- Team Member-Engineer-->
@@ -31,13 +34,14 @@ const generateTeam = team => {
                 <div class="card-body text-dark">
                 <p class="id">ID: ${engineer.getId()}</p>
                 <p class="email">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
-                <p class="github">GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
+                <p class="github">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></p>
                 </div>
             </div>
         </div>
         `;
     };
 
+    // create intern role card
     const generateIntern = intern => {
         return `
         <!-- Team Member(5)-->
@@ -80,6 +84,7 @@ const generateTeam = team => {
 }
 
 
+// export to generate the entire HTML page
 module.exports = team => {
     return `
     <!DOCTYPE html>
@@ -94,13 +99,13 @@ module.exports = team => {
     </head>
     <body>
         <header>
-            <nav id="navbar navbar-light bg-light">
-                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Team</span>
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1 w-100 text-center">My Team</span>
             </nav>
         </header>
         <main>
             <div class="container">
-                <div class="row justify-content-center" id="team-cards">
+                <div class="row justify-content-center">
                     ${generateTeam(team)}
                 </div>
             </div>

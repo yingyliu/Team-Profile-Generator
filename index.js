@@ -135,27 +135,6 @@ const writeFile = () => {
 }
 
 addManager()
-    // .then(addEngineer)
-    // .then((teamArray) => {
-    //     return generateHTML(teamArray);
-    // })
-    // .then((htmlPageContent) => {
-    //     return writeFile(htmlPageContent);
-    // })
-    // .catch((err) => {
-    //     console.log(err);
-    // });
-
-
-// function init(){
-//     inquirer
-//         .prompt(addManager)
-//         .then(function (response) {
-//             const htmlPageContent = generateHTML(response);
-//         })
-// }
-
-// init()
 
 
 
