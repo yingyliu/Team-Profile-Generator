@@ -84,7 +84,11 @@ function addEngineer() {
             name: "engineerId",
             message: "What is the engineer's employee ID number?"
         },
-
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the engineer's email address?"
+        },
         {
             type: "input",
             name: "engineerGithub",
@@ -108,6 +112,11 @@ function addIntern() {
         {
             type: "input",
             name: "internId",
+            message: "What is the intern's employee ID number?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
             message: "What is the intern's email address?"
         },
         {
