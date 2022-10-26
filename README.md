@@ -1,6 +1,6 @@
 # Team-Profile-Generator
 
-[Team-Profile-Generator Video](https:)
+[Team-Profile-Generator Video](https://youtu.be/76Rt_OHV8zQ)
 
 ## Table of Contents
 - [Description](#description)
