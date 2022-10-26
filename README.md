@@ -29,8 +29,8 @@ This uses Node.js to generate summary of employees profile of a software enginee
 
 ## Use
 - Step 1: Open terminal.
-- Step 2: Insert command npm i jest.
-- Step 3: After all the test passed, insert npm run test.
+- Step 2: Insert command npm run test.
+- Step 3: After all the test passed, insert command node index.js.
 - Step 4: Answer relevant questions as required.
 - Step 5: Keep adding employee profile by selecting role.
 - Step 6: Then select "Build a team" to create those profile.
